@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="im();">
+	<canvas id="mycanvas" width="400" height="400" style="border:1px solid black"></canvas>
+	<canvas id="mycanvas2" width="400" height="400" style="border:1px solid black"></canvas>
+	<canvas id="mycanvas3" width="400" height="400" style="border:1px solid black"></canvas>
+	<script>
+		var canvas = document.getElementById("mycanvas");
+
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "#FF0000";
+		ctx.fillRect(0,0,200,200);
+
+		var ctx2 = canvas.getContext("2d");
+		ctx2.fillStyle = "#0000FF";
+		ctx2.moveTo(0,0);
+		ctx2.lineTo(200,200);
+		ctx2.stroke();
+
+		var ctx3 = canvas.getContext("2d");
+		ctx3.fillStyle = "#00FF00";
+		ctx3.beginPath();
+		ctx3.arc(100,100,100,0,2*Math.PI);
+		ctx3.stroke();
+
+		var ctx4 = canvas.getContext("2d");
+		ctx4.fillStyle = "black" ;
+		ctx4.font = "30px Arial";
+		ctx4.fillText("Hello My Name Is RANI",0,300);
+		ctx4.strokeText("Hello My Name Is RANI",40,340);
+
+
+	</script>
+	<script>
+		var canvas = document.getElementById("mycanvas2");
+		var ctx5 = canvas.getContext("2d");
+		var imageObj = new Image();
+		imageObj.src="C:/Users/Rani/Pictures/Bluetooth/Magic Puzzles.jpg";
+		function im(){
+			ctx5.drawImage(imageObj,0,0,400,400)
+		}
+	</script>
+	<script>
+		var can = document.getElementById("mycanvas3");
+		var ctx6 = can.getContext("2d");
+		var col = ctx6.createLinearGradient(0,0,0,400);
+		col.addColorStop(0,"red");
+		col.addColorStop(0.25,"yellow");
+		col.addColorStop(0.50,"green");
+		col.addColorStop(0.75,"blue");
+		col.addColorStop(1,"purple");
+		ctx6.fillStyle = col;
+		ctx6.arc(can.width / 2,can.height / 2,200,0,2*Math.PI);
+		ctx6.fill();
+	</script>
+</body>
+</html>
